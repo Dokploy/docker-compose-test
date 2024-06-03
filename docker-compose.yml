@@ -16,10 +16,10 @@ services:
       - dokploy-network
     labels:
       - traefik.enable=true
-      - traefik.http.routers.nginx-test.rule=Host(`next-app.dokploy.com`)
-      - traefik.http.routers.nginx-test.entrypoints=websecure
-      - traefik.http.routers.nginx-test.certResolver=letsencrypt
-      - traefik.http.services.nginx-test.loadbalancer.server.port=3000
+      - traefik.http.routers.next-app.rule=Host(`next-app.dokploy.com`)
+      - traefik.http.routers.next-app.entrypoints=websecure
+      - traefik.http.routers.next-app.certResolver=letsencrypt
+      - traefik.http.services.next-app.loadbalancer.server.port=3000
   # Add more containers below (nginx, postgres, etc.)
 
 # Define a network, which allows containers to communicate
