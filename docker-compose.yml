@@ -11,14 +11,19 @@ services:
         NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
     restart: always
     ports:
-      - 3000:3000
+      - 3000
     networks:
-      - my_network
-
+      - dokploy-network
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.nginx-test.rule=Host(`next-app.dokploy.com`)
+      - traefik.http.routers.nginx-test.entrypoints=websecure
+      - traefik.http.routers.nginx-test.certResolver=letsencrypt
+      - traefik.http.services.nginx-test.loadbalancer.server.port=3000
   # Add more containers below (nginx, postgres, etc.)
 
 # Define a network, which allows containers to communicate
 # with each other, by using their container name as a hostname
 networks:
-  my_network:
+  dokploy-network:
     external: true
