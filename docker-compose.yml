@@ -20,7 +20,6 @@ services:
       - traefik.http.routers.next-app.tls.certResolver=letsencrypt
       - traefik.http.services.next-app.loadbalancer.server.port=3000
   # Add more containers below (nginx, postgres, etc.)
-
 # Define a network, which allows containers to communicate
 # with each other, by using their container name as a hostname
 networks:
