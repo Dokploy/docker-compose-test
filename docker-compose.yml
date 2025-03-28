@@ -10,15 +10,15 @@ services:
         NEXT_PUBLIC_ENV_VARIABLE: ${NEXT_PUBLIC_ENV_VARIABLE}
     restart: always
     ports:
-      - 3000
+      - "3000"
     networks:
       - dokploy-network
     labels:
       - traefik.enable=true
-      - traefik.http.routers.next-app.rule=Host(`next-app.dokploy.com`)
-      - traefik.http.routers.next-app.entrypoints=websecure
-      - traefik.http.routers.next-app.tls.certResolver=letsencrypt
-      - traefik.http.services.next-app.loadbalancer.server.port=3000
+      - traefik.http.routers.app-dokploy.rule=Host(`app-dokploy.finflow.com`)
+      - traefik.http.routers.app-dokploy.entrypoints=websecure
+      - traefik.http.routers.app-dokploy.tls.certResolver=letsencrypt
+      - traefik.http.services.app-dokploy.loadbalancer.server.port=3000
   # Add more containers below (nginx, postgres, etc.)
 # Define a network, which allows containers to communicate
 # with each other, by using their container name as a hostname
