@@ -15,7 +15,7 @@ services:
       - dokploy-network
     labels:
       - traefik.enable=true
-      - traefik.http.routers.app-dokploy.rule=Host(`app-dokploy.dokploy.com`)
+      - traefik.http.routers.app-dokploy.rule=Host(`app-dokploy.finflow.com`)
       - traefik.http.routers.app-dokploy.entrypoints=websecure
       - traefik.http.routers.app-dokploy.tls.certResolver=letsencrypt
       - traefik.http.services.app-dokploy.loadbalancer.server.port=3000
