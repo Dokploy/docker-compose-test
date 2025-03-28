@@ -26,7 +26,7 @@ ENV NEXT_PUBLIC_ENV_VARIABLE=${NEXT_PUBLIC_ENV_VARIABLE}
 # ENV NEXT_TELEMETRY_DISABLED 1
 
 # Build Next.js based on the preferred package manager
-RUN bun build
+RUN bun run build
 
 # Note: It is not necessary to add an intermediate step that does a full copy of `node_modules` here
 
