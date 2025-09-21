@@ -1,0 +1,6 @@
+services:
+  app:
+    image: myapp
+    ports: !reset []
+    environment:
+      FOO: !reset null
