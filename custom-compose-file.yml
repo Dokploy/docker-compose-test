@@ -11,6 +11,7 @@ services:
     restart: always
     ports:
       - 3000
+      
     # labels:
     #   - traefik.enable=true
     #   - traefik.http.routers.next-app.rule=Host(`next-app.dokploy.com`)
