@@ -1,6 +1,6 @@
 services:
   app:
-    image: myapp
+    image: nginx
     ports: !reset []
     environment:
       FOO: !reset null
