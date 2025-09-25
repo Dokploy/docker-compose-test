@@ -15,10 +15,10 @@ services:
       - dokploy-network
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.<unique-name>.rule=Host(`kloudshift.net`)"
-      - "traefik.http.routers.<unique-name>.entrypoints=websecure"
-      - "traefik.http.routers.<unique-name>.tls.certResolver=letsencrypt"
-      - "traefik.http.services.<unique-name>.loadbalancer.server.port=3000"
+      - "traefik.http.routers.next-app.rule=Host(`kloudshift.net`)"
+      - "traefik.http.routers.next-app.entrypoints=websecure"
+      - "traefik.http.routers.next-app.tls.certResolver=letsencrypt"
+      - "traefik.http.services.next-app.loadbalancer.server.port=3000"
 networks:
   dokploy-network:
     external: true
