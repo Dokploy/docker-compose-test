@@ -13,6 +13,12 @@ services:
       - 3000
     networks:
       - dokploy-network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.hello-world-demo-stwtp5.rule=Host(`demo.kloudshift.net`)"
+      - "traefik.http.routers.hello-world-demo-stwtp5.entrypoints=websecure"
+      - "traefik.http.routers.hello-world-demo-stwtp5.tls.certResolver=letsencrypt"
+      - "traefik.http.services.hello-world-demo-stwtp5.loadbalancer.server.port=3000"
 networks:
   dokploy-network:
     external: true
