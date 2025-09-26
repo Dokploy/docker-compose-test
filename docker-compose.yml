@@ -1,5 +1,5 @@
 version: "3"
- 
+
 services:
   next-app:
     build:
@@ -13,12 +13,6 @@ services:
       - 3000
     networks:
       - dokploy-network
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.hello-world-project-tutorial-6ayyav.rule=Host(`next-app.kloudshift.net`)"
-      - "traefik.http.routers.hello-world-project-tutorial-6ayyav.entrypoints=websecure"
-      - "traefik.http.routers.hello-world-project-tutorial-6ayyav.tls.certResolver=letsencrypt"
-      - "traefik.http.services.hello-world-project-tutorial-6ayyav.loadbalancer.server.port=3000"
 networks:
   dokploy-network:
     external: true
